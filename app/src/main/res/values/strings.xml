@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Reservaciòn de Vuelos</string>
+    <string name="nombre">Nombre</string>
+    <string name="password">Password</string>
+    <string name="aceptar">ACEPTAR</string>
+    <string name="nom_pas">Nombre del Pasajero</string>
+    <string name="prec_bol">Precio del Boleto</string>
+    <string name="form_pag">Forma de Pago</string>
+    <string name="cod_vuelo">Codigo de Vuelo</string>
+    <string name="num_vuel">Numero de Vuelo</string>
+    <string name="num_asien">Numero de Asiento</string>
+
+</resources>
