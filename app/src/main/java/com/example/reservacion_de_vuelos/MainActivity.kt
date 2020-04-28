@@ -4,12 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
-import kotlinx.android.synthetic.main.registro_vuelo.*
+
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    //Creamos los item para usar en el spiner de pago
+    //Creamos los item para usar en el spiner de pago, origen y destino
     var lista_de_pagos = arrayOf("Efectivo", "Tarjeta", "Cupon")
     var origen = arrayOf("Mexico", "Estados Unidos", "China","Japon","Africa")
     var destino = arrayOf("Mexico", "Estados Unidos", "China","Japon","Africa")
@@ -18,6 +18,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        button.setOnClickListener{
+           var estatus =  if (editText3.text.toString().equals("hola")
+               && editText4.text.toString().equals("password")) "Login es correcto"
+               else "login fallo"
+            
+            Toast.makeText(this, estatus,Toast.LENGTH_SHORT).show()
+        }
 
 
         //Crea un areglo para usar el simple sninner de pago
