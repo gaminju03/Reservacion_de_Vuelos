@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.widget.ArrayAdapter
-import androidx.room.RoomMasterTable.DEFAULT_ID
-import com.example.reservacion_de_vuelos.add_registro_vuelo.Companion.DEFAULT_ID
 import com.example.reservacion_de_vuelos.database.AppDatabase
 import com.example.reservacion_de_vuelos.database.Registro
 import com.example.reservacion_de_vuelos.helper.doAsync
@@ -20,7 +18,6 @@ class add_registro_vuelo : AppCompatActivity() {
         val EXTRA_ID="extraId"
         val INSTANCE_ID="instanceId"
         private val DEFAULT_ID=-1
-
         private val TAG= add_registro_vuelo::class.java.simpleName
 
     }
@@ -30,7 +27,6 @@ class add_registro_vuelo : AppCompatActivity() {
     var destino = arrayOf("Mexico", "Estados Unidos", "China","Japon","Africa")
 
     private var mTaskId= add_registro_vuelo.DEFAULT_ID
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_registro_vuelo)
@@ -47,20 +43,9 @@ class add_registro_vuelo : AppCompatActivity() {
                 add_registro_vuelo.DEFAULT_ID
             )
         }
-        val intent=intent
-        if(intent !=null && intent.hasExtra(add_registro_vuelo.EXTRA_ID)){
-            UpdatedAt.text=getString(R.string.btnagregar).toString()
-            if (mTaskId === add_registro_vuelo.DEFAULT_ID){
-                mTaskId=intent.getLongExtra(add_registro_vuelo.EXTRA_ID, add_registro_vuelo.DEFAULT_ID.toLong()).toInt()
-                doAsync{
-                    val registro= AppDatabase.getInstance(this@add_registro_vuelo)?.RegistroDao()?.loadById(mTaskId.toLong())
-                    runOnUiThread{
-                        populateUI(registro!!)
-                    }
 
-                }.execute()
-            }
-        }
+
+
 /*
         //Crea un areglo para usar el simple sninner de pago
         val aa = ArrayAdapter(this, android.R.layout.simple_spinner_item, lista_de_pagos)
@@ -100,7 +85,7 @@ class add_registro_vuelo : AppCompatActivity() {
         outState?.putInt(add_registro_vuelo.INSTANCE_ID, mTaskId)
         super.onSaveInstanceState(outState, outPersistentState)
     }
-    private fun populateUI(registro: Registro){
+   /* private fun populateUI(registro: Registro){
         if (registro==null) return
         NombrePass.setText(registro.nom_pas)
         Prec_bol.setText(registro.prec_bol)
@@ -115,9 +100,39 @@ class add_registro_vuelo : AppCompatActivity() {
     //    Spndestino.setText(registro.spndestino)
 
 
-    }
+    }*/
+   private fun populateUI(registro: Registro){
+       if (registro==null) return
+       nom_pas.setText(registro.nom_pas)
+       prec_bol.setText(registro.prec_bol)
+       txtvuelo.setText(registro.cod_vuel)
+       num_vuel.setText(registro.num_vuel)
+       num_asien.setText(registro.num_asien)
+   }
 
     fun onSaveButtonClicked(){
+        val nombre=nom_pas.text.toString()
+        val precio=prec_bol.text.toString()
+        val vuelo=txtvuelo.text.toString()
+        val numvu=num_vuel.text.toString()
+        val numas=num_asien.text.toString()
+
+
+        val Entry= Registro(nom_pas=nombre, prec_bol=precio,cod_vuel=numvu,num_vuel=numas,num_asien=vuelo,updatedAt = Date())
+        doAsync{
+            if (mTaskId == add_registro_vuelo.DEFAULT_ID){
+                AppDatabase.getInstance(this)!!.RegistroDao().insert(Entry)
+            }else{
+                Entry.id=mTaskId.toLong()
+                AppDatabase.getInstance(this)!!.RegistroDao().update(Entry)
+            }
+            finish()
+        }.execute()
+        val intent = Intent(this, Mostrar_Tabla::class.java)
+        startActivity(intent)
+    }
+
+   /* fun onSaveButtonClicked(){
 
         val nombre=NombrePass.text.toString()
         val precio=Prec_bol.text.toString()
@@ -144,6 +159,6 @@ class add_registro_vuelo : AppCompatActivity() {
 
         val intent = Intent(this, Mostrar_Tabla::class.java)
         startActivity(intent)
-    }
+    }*/
 }
 
