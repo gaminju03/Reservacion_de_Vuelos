@@ -21,7 +21,8 @@ class MainActivity : AppCompatActivity() {
             if (editText3.text.toString().equals("juan")
                     && editText4.text.toString().equals("password")) {
 
-                    val intent = Intent(this, registro_vuelos::class.java)
+                    val intent = Intent(this, add_registro_vuelo::class.java)
+
                     startActivity(intent)
 
                 }

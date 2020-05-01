@@ -8,7 +8,7 @@ import com.example.reservacion_de_vuelos.database.AppDatabase
 import com.example.reservacion_de_vuelos.database.Registro
 import com.example.reservacion_de_vuelos.helper.doAsync
 import kotlinx.android.synthetic.main.activity_registro_vuelos.*
-
+/*
 class registro_vuelos : AppCompatActivity() {
 
     //Creamos los item para usar en el spiner de pago, origen y destino
@@ -53,4 +53,6 @@ class registro_vuelos : AppCompatActivity() {
         spndestino!!.setAdapter(dd)
     }
 
+
     }
+*/

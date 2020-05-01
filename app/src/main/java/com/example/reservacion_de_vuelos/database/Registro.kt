@@ -12,16 +12,14 @@ data class Registro (
     var id:Long=0,
     var nom_pas:String="",
     var prec_bol:String="",
-    var txtPagoforma:String="",
-    var spinner:String="",
-    var txtvuelo:String="",
+ //   var spinner:String="tarjeta",
+    var cod_vuel:String="",
     var num_vuel:String="",
     var num_asien:String="",
-    var origen:String="",
-    var spinner2:String="",
-    var txtdestino:String="",
-    var spndestino:String="",
-    var btnagregar:String="",
+   // var origen:String="",
+ //   var spinner2:String="mexico",
+ //   var spndestino:String="japon",
+
 
     @ColumnInfo(name="updated_at")
 var updatedAt: Date

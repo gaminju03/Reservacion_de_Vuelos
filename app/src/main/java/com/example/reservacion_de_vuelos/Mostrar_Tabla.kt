@@ -78,8 +78,8 @@ class Mostrar_Tabla : AppCompatActivity() {
         }
     }
     private fun onItemClickListener(registro:Registro){
-        val intent= Intent(this,AddRegistroActivity::class.java)
-        intent.putExtra(AddRegistroActivity.EXTRA_ID,registro.id)
+        val intent= Intent(this,add_registro_vuelo::class.java)
+        intent.putExtra(add_registro_vuelo.EXTRA_ID,registro.id)
         startActivity(intent)
 
     }

@@ -1,5 +1,6 @@
 package com.example.reservacion_de_vuelos
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -10,22 +11,28 @@ import kotlinx.android.synthetic.main.activity_registro_vuelos.*
 import  kotlinx.android.synthetic.main.registro_layout.*
 import kotlinx.android.synthetic.main.registro_layout.view.*
 import java.util.*
-
+/*
 class AddRegistroActivity : AppCompatActivity() {
-    companion object {
+   /* companion object {
         val EXTRA_ID="extraId"
-        val INSTANCE_ID="instanceId"
-        private val DEFAULT_ID=-1
+     //   val INSTANCE_ID="instanceId"
+       // private val DEFAULT_ID=-1
         private val TAG= AddRegistroActivity::class.java.simpleName
 
-    }
+    }*/
 
-    private var mTaskId= AddRegistroActivity.DEFAULT_ID
+    //private var mTaskId= AddRegistroActivity.DEFAULT_ID
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro_vuelos)
 
         UpdatedAt.setOnClickListener{
+            onSaveButtonClicked()
+
+
+        }
+
+        btnagregar.setOnClickListener{
             onSaveButtonClicked()
         }
 
@@ -72,6 +79,7 @@ class AddRegistroActivity : AppCompatActivity() {
     }
 
     fun onSaveButtonClicked(){
+/*
         val nombre=NombrePass.text.toString()
         val precio=Prec_bol.text.toString()
         val forma_pago=Spinner.text.toString()
@@ -93,5 +101,9 @@ class AddRegistroActivity : AppCompatActivity() {
             }
             finish()
         }.execute()
+*/
+        val intent = Intent(this, MainActivity::class.java)
+
+        startActivity(intent)
     }
-}
+}*/

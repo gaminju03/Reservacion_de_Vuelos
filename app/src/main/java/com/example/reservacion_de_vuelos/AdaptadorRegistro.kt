@@ -40,15 +40,13 @@ class AdaptadorRegistro(private var mTaskEntries:List<Registro>, private val mCo
 
             itemView.NombrePass.text = registro.nom_pas
             itemView.Prec_bol.text = registro.prec_bol
-            itemView.TxtPagoforma.text = registro.txtPagoforma
-            itemView.Spinner.text = registro.spinner
-            itemView.Txtvuelo.text = registro.txtvuelo
+           // itemView.Spinner.text = registro.spinner
+            itemView.Txtvuelo.text = registro.cod_vuel
             itemView.Num_vuel.text = registro.num_vuel
             itemView.Num_asien.text = registro.num_asien
-            itemView.Origen.text = registro.origen
-            itemView.Spinner2.text = registro.spinner2
-            itemView.Txtdestino.text = registro.txtdestino
-            itemView.Spndestino.text = registro.spndestino
+           // itemView.Origen.text = registro.origen
+        //    itemView.Spinner2.text = registro.spinner2
+        //    itemView.Spndestino.text = registro.spndestino
 
 
 
