@@ -10,4 +10,5 @@
     <string name="num_vuel">Numero de Vuelo</string>
     <string name="num_asien">Numero de Asiento</string>
 
+    <string name="btnagregar">AGREGAR</string>
 </resources>

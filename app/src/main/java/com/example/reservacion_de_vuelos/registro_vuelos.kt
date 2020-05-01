@@ -1,8 +1,12 @@
 package com.example.reservacion_de_vuelos
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import com.example.reservacion_de_vuelos.database.AppDatabase
+import com.example.reservacion_de_vuelos.database.Registro
+import com.example.reservacion_de_vuelos.helper.doAsync
 import kotlinx.android.synthetic.main.activity_registro_vuelos.*
 
 class registro_vuelos : AppCompatActivity() {
@@ -26,6 +30,7 @@ class registro_vuelos : AppCompatActivity() {
         // mostramos en el spinner los item
         spinner!!.setAdapter(aa)
 
+///omited selected funcion
 
 
         //Crea un areglo para usar el simple sninner de Origen
@@ -47,4 +52,5 @@ class registro_vuelos : AppCompatActivity() {
         // mostramos en el spinner los item
         spndestino!!.setAdapter(dd)
     }
+
     }

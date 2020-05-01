@@ -7,9 +7,11 @@ import com.example.reservacion_de_vuelos.database.AppDatabase
 import com.example.reservacion_de_vuelos.database.Registro
 import com.example.reservacion_de_vuelos.helper.doAsync
 import kotlinx.android.synthetic.main.activity_registro_vuelos.*
+import  kotlinx.android.synthetic.main.registro_layout.*
+import kotlinx.android.synthetic.main.registro_layout.view.*
 import java.util.*
 
-class AddRegistroActivity {
+class AddRegistroActivity : AppCompatActivity() {
     companion object {
         val EXTRA_ID="extraId"
         val INSTANCE_ID="instanceId"
@@ -23,7 +25,7 @@ class AddRegistroActivity {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro_vuelos)
 
-        saveButton.setOnClickListener{
+        UpdatedAt.setOnClickListener{
             onSaveButtonClicked()
         }
 
@@ -35,7 +37,7 @@ class AddRegistroActivity {
         }
         val intent=intent
         if(intent !=null && intent.hasExtra(AddRegistroActivity.EXTRA_ID)){
-            saveButton.text=getString(R.string.update_button).toString()
+            UpdatedAt.text=getString(R.string.btnagregar).toString()
             if (mTaskId === AddRegistroActivity.DEFAULT_ID){
                 mTaskId=intent.getLongExtra(AddRegistroActivity.EXTRA_ID, AddRegistroActivity.DEFAULT_ID.toLong()).toInt()
                 doAsync{
@@ -54,30 +56,34 @@ class AddRegistroActivity {
     }
     private fun populateUI(registro: Registro){
         if (registro==null) return
-        editTextNombre.setText(registro.nom_pas)
-        tvApellido.setText(registro.prec_bol)
-        tvEspe.setText(registro.txtPagoforma)
-        tvDom.setText(registro.spinner)
-        tvTel.setText(registro.txtvuelo)
-        tvTel.setText(registro.num_vuel)
-        tvTel.setText(registro.num_asien)
-        tvTel.setText(registro.origen)
-        tvTel.setText(registro.spinner2)
-        tvTel.setText(registro.txtdestino)
-        tvTel.setText(registro.spndestino)
-        tvTel.setText(registro.btnagregar)
+        NombrePass.setText(registro.nom_pas)
+        Prec_bol.setText(registro.prec_bol)
+        //TxtPagoforma.setText(registro.txtPagoforma)//txt
+        Spinner.setText(registro.spinner)
+        //Txtvuelo.setText(registro.txtvuelo)//txt
+        Num_vuel.setText(registro.num_vuel)
+        Num_asien.setText(registro.num_asien)
+       // Origen.setText(registro.origen)//txt
+        Spinner2.setText(registro.spinner2)
+       // Txtdestino.setText(registro.txtdestino)//txt
+        Spndestino.setText(registro.spndestino)
+
 
     }
 
     fun onSaveButtonClicked(){
-        val nombre=editTextNombre.text.toString()
-        val precio=tvApellido.text.toString()
-        val especialidad=tvEspe.text.toString()
-        val domicilio=tvDom.text.toString()
-        val telefono=tvTel.text.toString()
+        val nombre=NombrePass.text.toString()
+        val precio=Prec_bol.text.toString()
+        val forma_pago=Spinner.text.toString()
+        val num_vue=Num_vuel.text.toString()
+        val num_asie=Num_asien.text.toString()
+        val origen=Origen.text.toString()
+        val ori=Spinner2.text.toString()
+        val destino=Spndestino.text.toString()
 
 
-        val Entry= Registro(nom_pas= nombre, prec_bol= precio,txtPagoforma=domicilio,telefono=telefono,especialidad=especialidad,updatedAt = Date())
+        val Entry= Registro(nom_pas= nombre, prec_bol= precio,spinner=forma_pago,num_vuel=num_vue,num_asien=num_asie,
+            origen=origen,spinner2=ori,spndestino = destino,updatedAt = Date())
         doAsync{
             if (mTaskId == AddRegistroActivity.DEFAULT_ID){
                 AppDatabase.getInstance(this)!!.RegistroDao().insert(Entry)

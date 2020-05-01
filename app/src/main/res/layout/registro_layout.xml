@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@android:color/primary_text_light"
-            tools:text="Nombre Alumno" />
+            tools:text="NombrePass" />
 
         <TextView
             android:id="@+id/Prec_bol"
@@ -30,28 +30,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@android:color/primary_text_light"
-            tools:text="Nombre Alumno" />
+            tools:text="Prec_bol" />
         <TextView
             android:id="@+id/TxtPagoforma"
             style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@android:color/primary_text_light"
-            tools:text="Nombre Alumno" />
+            tools:text="TxtPagoforma" />
         <TextView
             android:id="@+id/Spinner"
             style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@android:color/primary_text_light"
-            tools:text="Nombre Alumno" />
+            tools:text="Spinner" />
 
         <TextView
             android:id="@+id/Txtvuelo"
             style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombre Alumno"
+            android:text="Txtvuelo"
             android:textColor="@android:color/primary_text_light" />
 
         <!-- TextView that displays the update date -->
@@ -70,35 +70,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@android:color/primary_text_light"
-            tools:text="Nombre Alumno" />
+            tools:text="Num_asien" />
         <TextView
             android:id="@+id/Origen"
             style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@android:color/primary_text_light"
-            tools:text="Nombre Alumno" />
+            tools:text="Origen" />
         <TextView
             android:id="@+id/Spinner2"
             style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@android:color/primary_text_light"
-            tools:text="Nombre Alumno" />
+            tools:text="Spinner2" />
         <TextView
             android:id="@+id/Txtdestino"
             style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@android:color/primary_text_light"
-            tools:text="Nombre Alumno" />
+            tools:text="Txtdestino" />
         <TextView
             android:id="@+id/Spndestino"
             style="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@android:color/primary_text_light"
-            tools:text="Nombre Alumno" />
+            tools:text="Spndestino" />
         <TextView
             android:id="@+id/UpdatedAt"
             style="@style/TextAppearance.AppCompat.Small"

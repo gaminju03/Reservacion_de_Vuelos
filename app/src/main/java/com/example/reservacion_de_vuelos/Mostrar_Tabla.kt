@@ -57,11 +57,11 @@ class Mostrar_Tabla : AppCompatActivity() {
         }
     }).attachToRecyclerView(recyclerView)
 
-    fab.setOnClickListener { view ->
+   /* fab.setOnClickListener { view ->
 
         val addIntent = Intent(this@Mostrar_Tabla, AddRegistroActivity::class.java)
         startActivity(addIntent)
-    }
+    }*/
 }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

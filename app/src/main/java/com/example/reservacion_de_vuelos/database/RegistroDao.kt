@@ -5,7 +5,7 @@ import androidx.room.*
 
 interface RegistroDao {
 
-    @Query("select * from registro order by nombre")
+    @Query("select * from registro order by nom_pas")
     fun loadAll(): List<Registro>
     @Insert
     fun insert(alumno:Registro)
