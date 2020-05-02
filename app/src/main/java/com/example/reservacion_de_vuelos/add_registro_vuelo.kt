@@ -85,22 +85,7 @@ class add_registro_vuelo : AppCompatActivity() {
         outState?.putInt(add_registro_vuelo.INSTANCE_ID, mTaskId)
         super.onSaveInstanceState(outState, outPersistentState)
     }
-   /* private fun populateUI(registro: Registro){
-        if (registro==null) return
-        NombrePass.setText(registro.nom_pas)
-        Prec_bol.setText(registro.prec_bol)
-        //TxtPagoforma.setText(registro.txtPagoforma)//txt
-      //  Spinner.setText(registro.spinner)
-        Txtvuelo.setText(registro.cod_vuel)
-        Num_vuel.setText(registro.num_vuel)
-        Num_asien.setText(registro.num_asien)
-        // Origen.setText(registro.origen)//txt
-    //    Spinner2.setText(registro.spinner2)
-        // Txtdestino.setText(registro.txtdestino)//txt
-    //    Spndestino.setText(registro.spndestino)
 
-
-    }*/
    private fun populateUI(registro: Registro){
        if (registro==null) return
        nom_pas.setText(registro.nom_pas)
@@ -132,33 +117,6 @@ class add_registro_vuelo : AppCompatActivity() {
         startActivity(intent)
     }
 
-   /* fun onSaveButtonClicked(){
 
-        val nombre=NombrePass.text.toString()
-        val precio=Prec_bol.text.toString()
-     //   val forma_pago=Spinner.text.toString()
-        val txtvuelo=Txtvuelo.text.toString()
-        val num_vue=Num_vuel.text.toString()
-        val num_asie=Num_asien.text.toString()
-        //val origen=Origen.text.toString()
-     //   val ori=Spinner2.text.toString()
-      //  val destino=Spndestino.text.toString()
-
-
-        val Entry= Registro(nom_pas= nombre, prec_bol= precio,cod_vuel=txtvuelo,num_vuel=num_vue,num_asien=num_asie,
-            updatedAt = Date())
-        doAsync{
-            if (mTaskId == add_registro_vuelo.DEFAULT_ID){
-                AppDatabase.getInstance(this)!!.RegistroDao().insert(Entry)
-            }else{
-                Entry.id=mTaskId.toLong()
-                AppDatabase.getInstance(this)!!.RegistroDao().update(Entry)
-            }
-            finish()
-        }.execute()
-
-        val intent = Intent(this, Mostrar_Tabla::class.java)
-        startActivity(intent)
-    }*/
 }
 

@@ -15,20 +15,18 @@ import com.example.reservacion_de_vuelos.database.Registro
 import kotlinx.android.synthetic.main.activity_mostrar__tabla.*
 
 class Mostrar_Tabla : AppCompatActivity() {
-//Mostar Resicle view
 
     private lateinit var viewAdapter: AdaptadorRegistro
     private lateinit var viewManager: RecyclerView.LayoutManager
 
-    val ListaAlumnos: List<Registro> = ArrayList()
+    val ListaRegistro: List<Registro> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mostrar__tabla)
 
-    //
     viewManager= LinearLayoutManager(this)
-    viewAdapter= AdaptadorRegistro(ListaAlumnos,this,{ registro:Registro->onItemClickListener(registro)})
+   viewAdapter= AdaptadorRegistro(ListaRegistro,this,{ registro:Registro->onItemClickListener(registro)})
 
         recyclerView.apply{
         setHasFixedSize(true)
@@ -57,26 +55,9 @@ class Mostrar_Tabla : AppCompatActivity() {
         }
     }).attachToRecyclerView(recyclerView)
 
-   /* fab.setOnClickListener { view ->
-
-        val addIntent = Intent(this@Mostrar_Tabla, AddRegistroActivity::class.java)
-        startActivity(addIntent)
-    }*/
 }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
 
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        return when (item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
     private fun onItemClickListener(registro:Registro){
         val intent= Intent(this,add_registro_vuelo::class.java)
         intent.putExtra(add_registro_vuelo.EXTRA_ID,registro.id)
