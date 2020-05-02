@@ -26,7 +26,7 @@ class Mostrar_Tabla : AppCompatActivity() {
         setContentView(R.layout.activity_mostrar__tabla)
 
     viewManager= LinearLayoutManager(this)
-  // viewAdapter= AdaptadorRegistro(ListaRegistro,this,{ registro:Registro->onItemClickListener(registro)})
+   viewAdapter= AdaptadorRegistro(ListaRegistro,this,{ registro:Registro->onItemClickListener(registro)})
 
         recyclerView.apply{
         setHasFixedSize(true)
@@ -57,12 +57,31 @@ class Mostrar_Tabla : AppCompatActivity() {
 
 }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        return when (item.itemId) {
+            R.id.action_settings ->
+
+                true
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+
 
         private fun onItemClickListener(registro:Registro){
         val intent= Intent(this,add_registro_vuelo::class.java)
         intent.putExtra(add_registro_vuelo.EXTRA_ID,registro.id)
         startActivity(intent)
     }
+
+
 
 
 //Muestra el resultado de la tabla ciclo

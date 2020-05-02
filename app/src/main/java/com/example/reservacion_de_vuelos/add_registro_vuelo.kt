@@ -45,7 +45,7 @@ class add_registro_vuelo : AppCompatActivity() {
         }
 
 
-/*
+
         //Crea un areglo para usar el simple sninner de pago
         val aa = ArrayAdapter(this, android.R.layout.simple_spinner_item, lista_de_pagos)
 
@@ -77,7 +77,7 @@ class add_registro_vuelo : AppCompatActivity() {
 
         // mostramos en el spinner los item
         spndestino!!.setAdapter(dd)
-*/
+
 
 
     }
@@ -90,7 +90,6 @@ class add_registro_vuelo : AppCompatActivity() {
        if (registro==null) return
        nom_pas.setText(registro.nom_pas)
        prec_bol.setText(registro.prec_bol)
-
        txtvuelo.setText(registro.cod_vuel)
        num_vuel.setText(registro.num_vuel)
        num_asien.setText(registro.num_asien)
