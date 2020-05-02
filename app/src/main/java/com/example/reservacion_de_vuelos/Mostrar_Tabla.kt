@@ -26,7 +26,7 @@ class Mostrar_Tabla : AppCompatActivity() {
         setContentView(R.layout.activity_mostrar__tabla)
 
     viewManager= LinearLayoutManager(this)
-   viewAdapter= AdaptadorRegistro(ListaRegistro,this,{ registro:Registro->onItemClickListener(registro)})
+  // viewAdapter= AdaptadorRegistro(ListaRegistro,this,{ registro:Registro->onItemClickListener(registro)})
 
         recyclerView.apply{
         setHasFixedSize(true)
@@ -58,18 +58,20 @@ class Mostrar_Tabla : AppCompatActivity() {
 }
 
 
-    private fun onItemClickListener(registro:Registro){
+        private fun onItemClickListener(registro:Registro){
         val intent= Intent(this,add_registro_vuelo::class.java)
         intent.putExtra(add_registro_vuelo.EXTRA_ID,registro.id)
         startActivity(intent)
-
     }
 
+
+//Muestra el resultado de la tabla ciclo
     override fun onResume(){
         super.onResume()
         retrieve()
     }
 
+    //Realiza una consulta a la base de datos en general y la muestra
     private fun retrieve(){
         doAsync{
             val registro= AppDatabase.getInstance(this@Mostrar_Tabla)?.RegistroDao()?.loadAll()

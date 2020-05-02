@@ -12,7 +12,7 @@ data class Registro (
     var id:Long=0,
     var nom_pas:String="",
     var prec_bol:String="",
- //   var spinner:String="tarjeta",
+ //  var spinner:String="tarjeta",
     var cod_vuel:String="",
     var num_vuel:String="",
     var num_asien:String="",

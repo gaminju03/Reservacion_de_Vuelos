@@ -35,21 +35,19 @@ class AdaptadorRegistro(private var mTaskEntries:List<Registro>, private val mCo
 
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        ///alumno = nombre de la tabla  y Alumno = Nombre de la clase
+        ///registro = nombre de la tabla  y Registro = Nombre de la clase
         fun bind (registro: Registro, context: Context, clickListener: (Registro) -> Unit){
 
             itemView.NombrePass.text = registro.nom_pas
             itemView.Prec_bol.text = registro.prec_bol
-           // itemView.Spinner.text = registro.spinner
+            //itemView.Spinner.text = registro.spinner
             itemView.Txtvuelo.text = registro.cod_vuel
             itemView.Num_vuel.text = registro.num_vuel
             itemView.Num_asien.text = registro.num_asien
            // itemView.Origen.text = registro.origen
         //    itemView.Spinner2.text = registro.spinner2
         //    itemView.Spndestino.text = registro.spndestino
-
-
-
+            //trea las variables de dia mes año
             itemView.UpdatedAt.text = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(registro.updatedAt).toString()
             itemView.setOnClickListener{ clickListener(registro)}
         }

@@ -11,4 +11,16 @@
     <string name="num_asien">Numero de Asiento</string>
 
     <string name="btnagregar">AGREGAR</string>
+
+
+    <string-array name="Spinner">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
 </resources>
