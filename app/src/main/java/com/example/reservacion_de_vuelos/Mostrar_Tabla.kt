@@ -56,10 +56,11 @@ class Mostrar_Tabla : AppCompatActivity() {
     }).attachToRecyclerView(recyclerView)
 
 }
-
+/*
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
 
         menuInflater.inflate(R.menu.menu_main, menu)
+
         return true
     }
 
@@ -71,8 +72,25 @@ class Mostrar_Tabla : AppCompatActivity() {
                 true
             else -> super.onOptionsItemSelected(item)
         }
-    }
+    }*/
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main,menu)
+
+        return true
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId){
+            R.id.llamada-> Llamada()
+            else -> super.onOptionsItemSelected(item)
+        }
+
+    }
+    fun Llamada():Boolean{
+        val intent = Intent( this, Llamar::class.java)
+        startActivity(intent)
+        return true
+    }
 
 
         private fun onItemClickListener(registro:Registro){
